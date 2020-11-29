@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class Player : MonoBehaviour
 {
+    public float distanceTraveled;
+
+    [SerializeField] UIController uiController;
+
     Rigidbody2D rb;
     
     [SerializeField] float movementSpeed = 10f;
@@ -20,6 +25,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxis("Horizontal") * movementSpeed;
+        distanceTraveled += Time.deltaTime;
     }
 
     private void FixedUpdate()
