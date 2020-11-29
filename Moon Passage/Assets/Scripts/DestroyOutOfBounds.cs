@@ -4,26 +4,20 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] UIController uiController;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collision name" + collision.gameObject.name);
+        //Debug.Log("collision name" + collision.gameObject.name);
 
         if(collision.gameObject.CompareTag("Platform"))
         {
             Destroy(collision.gameObject);
+        }
+
+        if(collision.gameObject.CompareTag("DeathBox"))
+        {          
+            uiController.ShowGameOverScreen();            
         }
     }
 }

@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        movement = Input.GetAxis("Horizontal") * movementSpeed;
         distanceTraveled += Time.deltaTime;
+        movement = Input.GetAxis("Horizontal") * movementSpeed;
+        
     }
 
     private void FixedUpdate()
@@ -34,5 +35,4 @@ public class Player : MonoBehaviour
         velocity.x = movement;
         rb.velocity = velocity;
     }
-
 }

@@ -9,17 +9,22 @@ public class UIController : MonoBehaviour
     [SerializeField] Text distanceTraveled;
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] Player player;
-    [SerializeField] GameObject gameMusic;
+    //[SerializeField] GameObject gameMusic;
 
     public void ShowGameOverScreen()
     {
         gameOverScreen.SetActive(true);
 
-        gameMusic.SetActive(false);
+        //gameMusic.SetActive(false);
 
         float roundedDistance = Mathf.Ceil(player.distanceTraveled);
 
         distanceTraveled.text = roundedDistance.ToString();
+    }
+
+    public void GameRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
