@@ -21,7 +21,7 @@ public class Oxygen : MonoBehaviour
     void Update()
     {
         currentOxygen -= Time.deltaTime;
-        Debug.Log(currentOxygen);
+        //Debug.Log(currentOxygen);
         oxygenBar.value = currentOxygen / oxygenAmount;
     }
 

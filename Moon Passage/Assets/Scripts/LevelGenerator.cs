@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour
 
     public int numberOfPlatforms = 200;
 
-    public float levelWidth = 3f;
+    public float levelWidth = 10f;
     public float minY = .3f;
     public float maxY = 1.5f;
             
@@ -26,5 +26,5 @@ public class LevelGenerator : MonoBehaviour
             //create platforms in this position and rotation
             Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
         }
-    }
+    }    
 }
