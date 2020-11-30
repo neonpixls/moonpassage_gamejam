@@ -10,6 +10,8 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
         //Debug.Log("collision name" + collision.gameObject.name);
 
+
+
         if(collision.gameObject.CompareTag("Platform"))
         {
             Destroy(collision.gameObject);

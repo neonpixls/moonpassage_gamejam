@@ -8,16 +8,14 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] Text distanceTraveled;
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] Player player;
-       
-
-    //[SerializeField] GameObject gameMusic;
+    [SerializeField] Player player;      
+    [SerializeField] GameObject gameMusic;
 
     public void ShowGameOverScreen()
     {
         player.playerIsAlive = false;
         gameOverScreen.SetActive(true);
-        //gameMusic.SetActive(false);
+        gameMusic.SetActive(false);
         float roundedDistance = Mathf.Ceil(player.distanceTraveled);
         distanceTraveled.text = roundedDistance.ToString();             
     }
