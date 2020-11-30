@@ -18,8 +18,8 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
 
         if(collision.gameObject.CompareTag("DeathBox"))
-        {          
-            uiController.ShowGameOverScreen();            
+        {
+            uiController.ShowGameOverScreen();         
         }
     }
 }
