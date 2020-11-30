@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     public float distanceTraveled;
 
+    public bool playerIsAlive = true;
+
     [SerializeField] UIController uiController;
 
     Rigidbody2D rb;
@@ -24,7 +26,11 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        distanceTraveled += Time.deltaTime;
+        if(playerIsAlive == true)
+        {
+            distanceTraveled += Time.deltaTime * 10;
+        }
+        
         movement = Input.GetAxis("Horizontal") * movementSpeed;
         
     }

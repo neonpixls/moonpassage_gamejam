@@ -8,9 +8,12 @@ using UnityEngine.UI;
 
 public class Oxygen : MonoBehaviour
 {
+    
     public Slider oxygenBar;
     public float oxygenAmount;   
     private float currentOxygen;
+
+    [SerializeField] UIController uiController;  
 
 
     void Start()
@@ -23,7 +26,14 @@ public class Oxygen : MonoBehaviour
         currentOxygen -= Time.deltaTime;
         //Debug.Log(currentOxygen);
         oxygenBar.value = currentOxygen / oxygenAmount;
+
+        if(currentOxygen <= 0)
+        {            
+            uiController.ShowGameOverScreen();
+        }
     }
+
+    
 
 
 
