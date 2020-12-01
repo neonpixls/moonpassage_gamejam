@@ -29,11 +29,7 @@ public class Player : MonoBehaviour
         {
             distanceTraveled += Time.deltaTime * 10;
             movement = Input.GetAxis("Horizontal") * movementSpeed;
-        }  
-        else
-        {
-            Destroy(GameObject.FindGameObjectWithTag("DeathBox"));
-        }
+        }         
     }
 
     private void FixedUpdate()
