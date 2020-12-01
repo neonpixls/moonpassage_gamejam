@@ -15,6 +15,10 @@ public class UIController : MonoBehaviour
     public void ShowGameOverScreen()
     {
         player.playerIsAlive = false;
+        if (player.playerIsAlive == false)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("DeathBox"));
+        }
         gameOverScreen.SetActive(true);
         gameMusic.SetActive(false);
         float roundedDistance = Mathf.Ceil(player.distanceTraveled);
