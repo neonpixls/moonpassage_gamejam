@@ -22,17 +22,18 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
     
     void Update()
     {
         if(playerIsAlive == true)
         {
             distanceTraveled += Time.deltaTime * 10;
+            movement = Input.GetAxis("Horizontal") * movementSpeed;
+        }  
+        else
+        {
+            Destroy(GameObject.FindGameObjectWithTag("DeathBox"));
         }
-        
-        movement = Input.GetAxis("Horizontal") * movementSpeed;
-        
     }
 
     private void FixedUpdate()
@@ -41,4 +42,6 @@ public class Player : MonoBehaviour
         velocity.x = movement;
         rb.velocity = velocity;
     }
+
+
 }

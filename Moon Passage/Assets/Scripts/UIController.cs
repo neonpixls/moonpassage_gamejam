@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] Text distanceTraveled;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject winGameScreen;
     [SerializeField] Player player;      
     [SerializeField] GameObject gameMusic;
 
@@ -23,6 +24,18 @@ public class UIController : MonoBehaviour
     public void GameRestart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void WinGameScreen()
+    {
+        if (player.playerIsAlive == true)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("DeathBox"));
+        }
+        winGameScreen.SetActive(true);
+        gameMusic.SetActive(false);
+        float roundedDistance = Mathf.Ceil(player.distanceTraveled);
+        distanceTraveled.text = roundedDistance.ToString();
     }
 
 }

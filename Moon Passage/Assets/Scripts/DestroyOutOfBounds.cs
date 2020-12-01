@@ -21,5 +21,13 @@ public class DestroyOutOfBounds : MonoBehaviour
         {
             uiController.ShowGameOverScreen();         
         }
+
+        if(collision.gameObject.CompareTag("Win"))
+        {
+            Debug.Log("win!!!");            
+            uiController.WinGameScreen();
+        }
     }
+
+    
 }
